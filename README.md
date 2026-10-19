@@ -33,11 +33,13 @@ Las versiones de Python siguientes aparecen en la metadata de los notebooks:
 | Sistema operativo documentado | Windows 10/11 | Comandos de esta guía |
 | Shell | PowerShell | Ejemplos de ejecución |
 
-No se encontró `requirements.txt`, `Pipfile.lock`, `poetry.lock`,
-`pyproject.toml`, `environment.yml` ni un archivo `.python-version` en el
-repositorio. Por tanto, las versiones históricas exactas de las librerías no
-pueden verificarse a partir del código fuente. Los imports usados en las
-prácticas incluyen, entre otros:
+El repositorio incluye `requirements.txt` en la raíz. Sus pins representan el
+entorno consolidado del proyecto; deben validarse en Python `3.11.5` antes de
+considerarlos un entorno certificado. No existen `Pipfile.lock`,
+`poetry.lock`, `pyproject.toml`, `environment.yml` ni un archivo
+`.python-version`. Las versiones históricas de algunas librerías no pueden
+verificarse a partir del código fuente. Los imports usados en las prácticas
+incluyen, entre otros:
 
 - `numpy`, `pandas`, `matplotlib`, `seaborn`, `plotly` y `mplfinance`;
 - `scikit-learn`, `statsmodels`, `pmdarima` y `prophet`;
@@ -45,8 +47,11 @@ prácticas incluyen, entre otros:
   `beautifulsoup4`;
 - `opencv-python`, `selenium`, `webdriver-manager` y `MetaTrader5`.
 
-La ausencia de un lockfile es una limitación de reproducibilidad que debe
-resolverse antes de considerar el entorno completamente congelado.
+`requirements.txt` funciona como lockfile de pip para este repositorio: cada
+línea usa `==` y debe conservarse bajo control de versiones. Después de
+instalar y ejecutar las prácticas en Python `3.11.5`, genere un backup
+completo con `pip freeze` y revise cualquier diferencia antes de actualizar
+el archivo.
 
 ## Instalación reproducible
 
@@ -129,15 +134,9 @@ realizarse con `poetry install`. De forma equivalente, Pipenv requiere
 versionar `Pipfile` y `Pipfile.lock`; no se deben mezclar gestores en el mismo
 entorno.
 
-Hasta que se genere y confirme el archivo, no es posible proporcionar de
-forma honesta un comando `pip install paquete==versión` para las librerías:
-esas versiones no quedaron registradas en el repositorio. El procedimiento
-anterior las captura desde un entorno validado y convierte esa instalación en
-la fuente reproducible.
-
-No se debe eliminar ni regenerar `requirements.txt` o `poetry.lock` durante
-una instalación normal. Solo deben actualizarse de forma intencional,
-validando nuevamente los notebooks y registrando el cambio.
+No se debe regenerar `requirements.txt` durante una instalación normal. Solo
+debe actualizarse de forma intencional, validando nuevamente los notebooks y
+registrando el cambio.
 
 ## Ejecución
 
@@ -176,8 +175,7 @@ En cada notebook, seleccione el kernel correspondiente (`Python (CriptoPython
 
 ## Estado de reproducibilidad
 
-El código puede estudiarse y ejecutarse por práctica, pero todavía no existe
-un lockfile versionado con las dependencias completas. Para declarar el
-proyecto reproducible, el siguiente paso recomendado es generar
-`requirements.txt` desde un entorno validado, revisarlo en Windows y
-confirmarlo junto con una actualización de esta sección.
+El lockfile de pip ya está presente en la raíz. La certificación final
+requiere instalarlo y ejecutar las prácticas en Python `3.11.5`; el entorno
+usado para generar la primera versión disponible fue Python `3.14.7`, por lo
+que no debe confundirse el pinning con una validación funcional completa.

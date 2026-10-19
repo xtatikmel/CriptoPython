@@ -1,0 +1,109 @@
+# CriptoPython - Python 3.11.5 - Windows
+# Dependencias directas y transitivas fijadas con ==.
+# Este archivo debe validarse en un entorno Python 3.11.5 antes de usarlo en
+# producción. El entorno disponible durante su generación fue Python 3.14.7.
+
+# Core / notebooks
+ipykernel==7.2.0
+jupyter==1.1.1
+jupyterlab==4.5.3
+notebook==7.5.3
+ipython==9.10.0
+nbconvert==7.17.0
+nbformat==5.10.4
+traitlets==5.14.3
+
+# Data / visualización
+numpy==2.3.5
+pandas==2.3.3
+matplotlib==3.10.8
+seaborn==0.13.2
+plotly==6.5.0
+mplfinance==0.12.10b0
+pillow==12.0.0
+pyarrow==22.0.0
+python-dateutil==2.9.0.post0
+pytz==2025.2
+tzdata==2025.2
+
+# Machine learning / forecasting
+scikit-learn==1.8.0
+scipy==1.17.0
+statsmodels==0.14.5
+pmdarima==2.0.4
+prophet==1.1.7
+joblib==1.5.3
+threadpoolctl==3.6.0
+tqdm==4.67.3
+
+# Mercados, APIs y automatización
+python-binance==1.0.29
+yfinance==0.2.66
+pandas-datareader==0.10.0
+requests==2.32.5
+urllib3==2.6.0
+certifi==2025.11.12
+charset-normalizer==3.4.4
+idna==3.11
+beautifulsoup4==4.14.3
+soupsieve==2.8.3
+selenium==4.38.0
+webdriver-manager==4.0.2
+MetaTrader5==5.0.5488
+
+# Visión artificial
+opencv-python==4.13.0.92
+
+# Curso de finanzas algorítmicas
+alpaca-py==0.43.2
+openai==2.14.0
+python-dotenv==1.2.1
+streamlit==1.52.1
+
+# Transitivas relevantes fijadas para los paquetes anteriores
+aiohttp==3.13.3
+aiosignal==1.4.0
+anyio==4.12.0
+attrs==25.4.0
+beautifulsoup4==4.14.3
+blinker==1.9.0
+cachetools==6.2.2
+cffi==2.0.0
+click==8.3.1
+colorama==0.4.6
+contourpy==1.3.3
+cycler==0.12.1
+fonttools==4.61.1
+frozenlist==1.8.0
+gitdb==4.0.12
+GitPython==3.1.45
+h11==0.16.0
+httpcore==1.0.9
+httpx==0.28.1
+jinja2==3.1.6
+jsonschema==4.25.1
+kiwisolver==1.4.9
+MarkupSafe==3.0.3
+narwhals==2.13.0
+packaging==25.0
+platformdirs==4.5.1
+protobuf==6.33.2
+pydeck==0.9.1
+pyparsing==3.3.1
+pydantic==2.12.5
+pydantic-core==2.41.5
+referencing==0.37.0
+rpds-py==0.30.0
+six==1.17.0
+smmap==5.0.2
+sniffio==1.3.1
+tenacity==9.1.2
+tornado==6.5.2
+typing-extensions==4.15.0
+watchdog==6.0.0
+websocket-client==1.9.0
+websockets==15.0.1
+
+# Herramientas de instalación: se recomienda fijar también pip y setuptools.
+pip==26.2.1
+setuptools==81.0.0
