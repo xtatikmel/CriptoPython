@@ -22,7 +22,7 @@ def criptodata(dataticker):
     df.index = pd.to_datetime(df.index, unit="ms")
     df = df.astype("float")
     print(df)
-    #save to csv:
+    # guardar en CSV:
     df.to_csv(dataticker + ".csv", encoding='utf-8')
     print("Data extraction finished :)")
 list = ["BTCUSDT","ETHUSDT","ADAUSDT","XRPUSDT"]

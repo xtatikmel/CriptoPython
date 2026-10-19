@@ -15,7 +15,7 @@ criptos = criptos.replace('</div>]','')
 criptos = criptos.replace(' ','')
 criptoclean = criptos.split("|")
 print("###########")
-#clean empty data from the list
+# limpiar los datos vacíos de la lista
 criptoclean[:] = [x for x in criptoclean if x]
 print(criptoclean)
 with open('reddit.csv', 'w', newline='') as csvfile:
@@ -40,12 +40,12 @@ criptos2 = criptos2.replace("N/A","0%")
 criptos2 = criptos2.replace('</span></td>','')
 criptos2 = criptos2.replace('</span>','')
 criptoclean2 = criptos2.split("|")
-#remove empty data from the list
+# eliminar los datos vacíos de la lista
 criptoclean2[:] = [x for x in criptoclean2 if x]
-#extract only non par
+# extraer solo los elementos impares
 criptoclean2 = [criptoclean2[i] for i in range(len(criptoclean2)) if i % 2 == 1]
 print("#############")
-#extract only data with percentages and clean the dirty data
+# extraer solo los datos con porcentajes y limpiar los datos erróneos
 pattern = r'(-?\d+%)+'
 percentages = [re.search(pattern, elem).group(1) for elem in criptoclean2]
 print(percentages)
@@ -55,7 +55,7 @@ with open('redditpercentages.csv', 'w+', newline='') as csvfile:
     writer.writerow(percentages)
 
 #########################
-#Merge de data:
+# Combinar los datos:
 datamerge = {
   "Date": str(date),
   "Ranking1": str(criptoclean[0]),
@@ -68,12 +68,12 @@ datamerge = {
 print("##########")
 print(datamerge)
 
-######MAKING THE CSV
+###### CREAR EL CSV
 with open('RedditData.csv', mode='a', newline='') as file:
     #
     writer = csv.DictWriter(file, fieldnames=['Date','Ranking1','Ranking2','Ranking3','Ranking1percentage','Ranking2percentage','Ranking3percentage'])
-    # writing the index header
+    # escribir la cabecera del índice
     if file.tell() == 0:
         writer.writeheader()
-    # writing de data
+    # escribir los datos
     writer.writerow(datamerge)

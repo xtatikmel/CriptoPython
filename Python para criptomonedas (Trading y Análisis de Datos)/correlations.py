@@ -1,14 +1,14 @@
 import pandas as pd
 import numpy as np
-#select csv
+# seleccionar CSV
 xrp_df = pd.read_csv("XRPUSDT.csv").tail(30)
 ada_df = pd.read_csv("ADAUSDT.csv").tail(30)
-#columns for study
+# columnas para el estudio
 xrp_prices = xrp_df[["Date","Close"]]
 ada_prices = ada_df[["Date","Close"]]
-#fusion in a dame dataframe
+# combinar en un mismo dataframe
 df = pd.merge(xrp_prices,ada_prices,on="Date",how="inner")
-#correlation
+# correlación
 correlation = np.corrcoef(df["Close_x"],df["Close_y"])[0,1]
 print(correlation)
 

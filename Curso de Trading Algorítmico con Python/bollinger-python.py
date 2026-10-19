@@ -19,7 +19,7 @@ ticker = 'NFLX'
 start_time = datetime.datetime(2021, 1, 1)
 #Si quisieramos especificiar fecha final:
 #end_time = datetime.datetime(2019, 1, 20)
-end_time = datetime.datetime.now().date().isoformat()         # today
+end_time = datetime.datetime.now().date().isoformat()         # fecha actual
 # yahoo comineza a descargar datos:
 connected = False
 while not connected:
@@ -40,10 +40,10 @@ def bollinger_bands(df, n, m):
     # n = longitud de alisado
     # m = num de desviaciones estandar lejos de MA
     
-    #typical price
+    # precio típico
     TP = (df['High'] + df['Low'] + df['Close']) / 3
     data = TP
-    #data = df['Adj Close']
+    # datos = df['Adj Close']
     
     # toma una columna del marco de datos
     B_MA = pd.Series((data.rolling(n, min_periods=n).mean()), name='B_MA')
@@ -93,12 +93,12 @@ def add_signal(df):
     sell_list = []
     
     for i in range(len(df['Close'])):
-        #if df['Close'][i] > df['BU'][i]:           # sell signal     daily
-        if df['High'][i] > df['BU'][i]:             # sell signal     weekly
+        #if df['Close'][i] > df['BU'][i]: # señal de venta diaria
+        if df['High'][i] > df['BU'][i]:             # señal de venta semanal
             buy_list.append(np.nan)
             sell_list.append(df['Close'][i])
-        #elif df['Close'][i] < df['BL'][i]:         # buy signal      daily
-        elif df['Low'][i] < df['BL'][i]:            # buy signal      weekly
+        #elif df['Close'][i] < df['BL'][i]:         # señal de compra diaria
+        elif df['Low'][i] < df['BL'][i]:            # señal de compra semanal
             buy_list.append(df['Close'][i])
             sell_list.append(np.nan)  
         else:

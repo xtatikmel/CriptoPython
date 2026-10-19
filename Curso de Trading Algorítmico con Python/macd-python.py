@@ -8,7 +8,7 @@ from os import system
 
 # Grafico de AMAZON desde la libreria de Yahoo Finance
 df = yf.download("NFLX", start = "2022-12-31")
-#We work with the close data:
+# Trabajamos con los datos de cierre:
 df["EMA12"] = df.Close.ewm(span=12).mean()
 df["EMA26"] = df.Close.ewm(span=26).mean()
 df["MACD"] = df.EMA12-df.EMA26
@@ -31,12 +31,12 @@ print("Bullish dates:")
 print(df.iloc[Buy].index, df.iloc[Buy].Close)
 buyinfo = df.iloc[Buy].index, df.iloc[Buy].Close
 
-#Get data from bullish
+# Obtener datos alcistas
 df1 = pd.DataFrame.from_records(buyinfo)
 print(df1)
-#Dataframe to dict:
+# Dataframe a diccionario:
 diccionario = df1.to_dict()
-#counting the data for get the last date for buy:
+# contar los datos para obtener la última fecha de compra:
 keys = list(diccionario.keys())
 contarkeys = keys[-1]
 # Problema con el disccionario
@@ -64,7 +64,7 @@ else:
 
 
 
-#Show chart with data:
+# Mostrar el gráfico con los datos:
 plt.subplot(2,1,1)
 plt.scatter(df.iloc[Buy].index, df.iloc[Buy].Close, marker="o", color="green")
 plt.scatter(df.iloc[Sell].index, df.iloc[Sell].Close, marker="o", color="red")

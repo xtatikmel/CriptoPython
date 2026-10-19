@@ -1,7 +1,7 @@
 #antes hay que installar las librerias
 #en inicio - ejecutar - cmd
 #poner:
-#pip install selenium
+# instalar selenium
 #si te faltan mas librerias hacer lo mismo
 #con el programa (ide) pycharm te avisa y te las instala
 #tambien hay que tener firefox instalado en ordenador
@@ -12,7 +12,7 @@ from subprocess import check_output
 import webbrowser
 
 driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
-print ("Productos más vendidos Amazon por categoría seleccionada:")
+print ("Productos mï¿½s vendidos Amazon por categorï¿½a seleccionada:")
 print ("Cargando...")
 driver.get("https://www.amazon.es/gp/bestsellers/industrial/ref=zg_bs_nav_0")
 like = driver.find_elements_by_class_name('a-link-normal')
@@ -23,7 +23,7 @@ for x in range(0,len(like)):
         print (element)
         datos = ""
         contarcaracteres = len(element)
-        if "€" in element:
+        if "ï¿½" in element:
             datos = "precio:"
         if contarcaracteres > 20:
             datos = "producto:"

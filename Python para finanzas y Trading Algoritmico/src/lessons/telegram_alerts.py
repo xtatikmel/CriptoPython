@@ -40,7 +40,7 @@ TELEGRAM_CHAT_ID = "438535917"
 
 
 # ------------------------------------------------------------
-# Helpers
+# Ayudantes
 # ------------------------------------------------------------
 
 def safe_get(url: str, params: dict):
@@ -55,7 +55,7 @@ def safe_post(url: str, data: dict):
 
 
 # ------------------------------------------------------------
-# FMP Data
+# Datos de FMP
 # ------------------------------------------------------------
 
 def get_price_summary(symbol: str, days: int = 60) -> str:
@@ -108,7 +108,7 @@ def get_news(symbol: str, limit: int = 3) -> str:
     for n in j[:limit]:
         title = n.get("title", "No title")
         site = n.get("site", "")
-        # date viene a veces como publishedDate o date; lo manejamos suave
+        #date viene a veces como PublishedDate o date; lo manejamos suave
         dt = n.get("publishedDate") or n.get("date") or ""
         lines.append(f"- {title} ({site}) {dt}".strip())
 
@@ -116,7 +116,7 @@ def get_news(symbol: str, limit: int = 3) -> str:
 
 
 # ------------------------------------------------------------
-# ChatGPT Insights
+# Insights de ChatGPT
 # ------------------------------------------------------------
 
 def generate_insights(symbol: str, context: str) -> str:
@@ -148,7 +148,7 @@ Context:
 
 
 # ------------------------------------------------------------
-# Excel Export
+# Exportación a Excel
 # ------------------------------------------------------------
 
 def export_to_excel(symbol: str, price: str, fundamentals: str, news: str, insights: str) -> str:
@@ -195,7 +195,7 @@ def build_telegram_message(symbol: str, price: str, insights: str, excel_filenam
 
 
 # ------------------------------------------------------------
-# Main
+# Principal
 # ------------------------------------------------------------
 
 def main():
@@ -223,7 +223,7 @@ Fundamentals:
     print("\n=== CHATGPT INSIGHTS ===")
     print(insights)
 
-    # 4) Export Excel
+    # 4) Exportar a Excel
     excel_file = export_to_excel(SYMBOL, price, fundamentals, news, insights)
     print(f"\nExcel generado: {excel_file}")
 

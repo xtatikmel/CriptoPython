@@ -2,7 +2,7 @@ from binance import Client
 import pandas as pd
 import datetime as dt
 import mplfinance as mpl
-#codigo para lanzar ordenes: https://stackoverflow.com/questions/66829757/how-to-create-buy-order-using-binance-api-on-python-using-all-my-selected-coin-i 
+#código para lanzar órdenes: https://stackoverflow.com/questions/66829757/how-to-create-buy-order-using-binance-api-on-python-using-all-my-selected-coin-i
 api_key = key1 ("Aqui poneis la key entre comillas")
 api_secret = key2 ("Aqui poneis la key entre comillas")
 client = Client(api_key, api_secret)

@@ -12,7 +12,7 @@ ALPACA_API_KEY=...
 ALPACA_SECRET_KEY=...
 
 DISCLAIMER: educativo, no asesoramiento financiero.
-#pip install alpaca-py
+# instalar alpaca-py
 """
 
 import os
@@ -118,7 +118,7 @@ def main():
     if not ALPACA_API_KEY or not ALPACA_SECRET_KEY:
         raise RuntimeError("Faltan ALPACA_API_KEY y/o ALPACA_SECRET_KEY en variables de entorno.")
 
-    # Alpaca paper = paper=True
+    # Alpaca en modo paper = paper=True
     trading = TradingClient(ALPACA_API_KEY, ALPACA_SECRET_KEY, paper=True)
 
     df = get_daily_close(SYMBOL, DAYS)

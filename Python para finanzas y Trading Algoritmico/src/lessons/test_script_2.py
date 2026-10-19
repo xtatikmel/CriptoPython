@@ -36,7 +36,7 @@ def get_quotes_df(symbols):
     symbols_str = ",".join(symbols)
     data = call_fmp(f"quote/{symbols_str}")
 
-    # Como data es una lista de diccionarios, pandas lo convierte directamente
+    #Como data es una lista de diccionarios, pandas lo convierte directamente
     df = pd.DataFrame(data)
 
     return df
