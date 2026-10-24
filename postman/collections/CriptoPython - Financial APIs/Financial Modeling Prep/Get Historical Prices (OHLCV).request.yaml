@@ -1,0 +1,12 @@
+$kind: http-request
+order: 3000
+method: GET
+url: 'https://financialmodelingprep.com/api/v3/historical-price-full/{{symbol}}?from=2024-01-01&to=2024-12-31&apikey={{FMP_API_KEY}}'
+queryParams:
+  - key: from
+    value: '2024-01-01'
+  - key: to
+    value: '2024-12-31'
+  - key: apikey
+    value: '{{FMP_API_KEY}}'
+description: Get full OHLCV historical price data for a symbol. Used in script_clase_2_df.py, tradin_bot_script5.py, insights_with_chatgpt.py, and telegram_alerts.py.

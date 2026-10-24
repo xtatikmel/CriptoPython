@@ -1,0 +1,8 @@
+$kind: http-request
+order: 5000
+method: GET
+url: 'https://financialmodelingprep.com/api/v3/profile/{{symbol}}?apikey={{FMP_API_KEY}}'
+queryParams:
+  - key: apikey
+    value: '{{FMP_API_KEY}}'
+description: 'Get company fundamentals: name, industry, market cap, P/E ratio, current price. Used in insights_with_chatgpt.py and telegram_alerts.py.'

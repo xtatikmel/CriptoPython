@@ -1,0 +1,5 @@
+$kind: http-request
+order: 1000
+method: GET
+url: 'https://apewisdom.io/all-crypto/'
+description: Get Reddit crypto sentiment rankings and mention percentages. Used in redditdata.py to track trending cryptocurrencies on Reddit.

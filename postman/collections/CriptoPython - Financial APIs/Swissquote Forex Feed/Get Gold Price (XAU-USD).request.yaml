@@ -1,0 +1,6 @@
+$kind: http-request
+name: 'Get Gold Price (XAU/USD)'
+order: 1000
+method: GET
+url: 'https://forex-data-feed.swissquote.com/public-quotes/bboquotes/instrument/XAU/USD'
+description: Get real-time gold price (XAU/USD) from Swissquote public feed. Returns bid/ask spread profile prices. Used in databolsa.py.

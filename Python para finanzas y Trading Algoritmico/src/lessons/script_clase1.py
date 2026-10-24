@@ -1,13 +1,14 @@
 import requests
 import os
 from dotenv import load_dotenv
+
 load_dotenv()  # ahora SÍ encuentra el archivo .env
 # Cargamos la API key desde el archivo .env
 API_KEY = os.getenv("FMP_API_KEY")
 
-print(API_KEY)  # solo para comprobar en clase (luego se quita)
+# print(API_KEY)  # solo para comprobar en clase (luego se quita)
 
-
+# BASE_URL = "https://financialmodelingprep.com/stable"
 BASE_URL = "https://financialmodelingprep.com/api/v3"
 
 def get_market_data(endpoint, params=None):

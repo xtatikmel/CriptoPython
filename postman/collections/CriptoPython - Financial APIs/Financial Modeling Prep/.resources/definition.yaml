@@ -1,0 +1,3 @@
+$kind: collection
+name: Financial Modeling Prep
+description: FMP endpoints for market data, historical prices, fundamentals, and news. Requires FMP_API_KEY.

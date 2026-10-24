@@ -1,0 +1,10 @@
+$kind: http-request
+order: 4000
+method: GET
+url: 'https://financialmodelingprep.com/api/v3/historical-price-full/{{symbol}}?timeseries=60&apikey={{FMP_API_KEY}}'
+queryParams:
+  - key: timeseries
+    value: '60'
+  - key: apikey
+    value: '{{FMP_API_KEY}}'
+description: Get the last N days of historical price data using the timeseries parameter. Used in tradin_bot_script5.py (120 days) and insights_with_chatgpt.py (60 days).

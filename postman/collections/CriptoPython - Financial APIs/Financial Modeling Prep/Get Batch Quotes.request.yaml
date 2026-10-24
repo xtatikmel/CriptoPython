@@ -1,0 +1,8 @@
+$kind: http-request
+order: 7000
+method: GET
+url: 'https://financialmodelingprep.com/api/v3/quote/{{symbols}}?apikey={{FMP_API_KEY}}'
+queryParams:
+  - key: apikey
+    value: '{{FMP_API_KEY}}'
+description: 'Get current prices for multiple symbols at once (comma-separated). Example: AAPL,MSFT,TSLA. Used in script_clase_2_df.py.'

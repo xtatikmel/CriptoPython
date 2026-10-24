@@ -1,0 +1,14 @@
+$kind: http-request
+order: 1000
+method: POST
+url: 'https://api.telegram.org/bot{{TELEGRAM_BOT_TOKEN}}/sendMessage'
+body:
+  type: urlencoded
+  content:
+    - key: chat_id
+      value: '{{TELEGRAM_CHAT_ID}}'
+    - key: text
+      value: 'Trading alert: Test message from Postman'
+    - key: parse_mode
+      value: HTML
+description: Send a message to a Telegram chat. Used in telegram_alerts.py to send trading alerts and financial insights.

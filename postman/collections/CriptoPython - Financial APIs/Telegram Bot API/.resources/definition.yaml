@@ -1,0 +1,3 @@
+$kind: collection
+name: Telegram Bot API
+description: Telegram Bot API for sending trading alerts and notifications. Requires TELEGRAM_BOT_TOKEN and TELEGRAM_CHAT_ID.

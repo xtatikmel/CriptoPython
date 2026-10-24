@@ -1,0 +1,22 @@
+name: CriptoPython
+values:
+  - key: FMP_API_KEY
+    value: ''
+    enabled: true
+    type: secret
+  - key: symbol
+    value: AAPL
+    enabled: true
+    type: default
+  - key: symbols
+    value: 'AAPL,MSFT,TSLA'
+    enabled: true
+    type: default
+  - key: TELEGRAM_BOT_TOKEN
+    value: ''
+    enabled: true
+    type: secret
+  - key: TELEGRAM_CHAT_ID
+    value: ''
+    enabled: true
+    type: default

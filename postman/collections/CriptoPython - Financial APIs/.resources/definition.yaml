@@ -1,0 +1,3 @@
+$kind: collection
+name: CriptoPython - Financial APIs
+description: API endpoints used across the CriptoPython project — Financial Modeling Prep, Telegram Bot, Swissquote Forex, and ApeWisdom.

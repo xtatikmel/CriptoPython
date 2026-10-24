@@ -1,0 +1,3 @@
+$kind: collection
+name: ApeWisdom
+description: ApeWisdom crypto sentiment data from Reddit. No authentication required.

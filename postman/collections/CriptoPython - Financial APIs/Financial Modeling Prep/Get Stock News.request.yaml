@@ -1,0 +1,12 @@
+$kind: http-request
+order: 6000
+method: GET
+url: 'https://financialmodelingprep.com/api/v3/stock_news?tickers={{symbol}}&limit=3&apikey={{FMP_API_KEY}}'
+queryParams:
+  - key: tickers
+    value: '{{symbol}}'
+  - key: limit
+    value: '3'
+  - key: apikey
+    value: '{{FMP_API_KEY}}'
+description: Get the latest news articles for a stock ticker. Used in insights_with_chatgpt.py and telegram_alerts.py.

@@ -1,0 +1,10 @@
+$kind: http-request
+order: 2000
+method: GET
+url: 'https://financialmodelingprep.com/stable/quote?symbol={{symbol}}&apikey={{FMP_API_KEY}}'
+queryParams:
+  - key: symbol
+    value: '{{symbol}}'
+  - key: apikey
+    value: '{{FMP_API_KEY}}'
+description: Get the current price using the stable API endpoint. Used in script_clase1.1.py.
