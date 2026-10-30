@@ -7,7 +7,8 @@ from dotenv import load_dotenv
 load_dotenv()
 API_KEY = os.getenv("FMP_API_KEY")
 
-BASE_URL = "https://financialmodelingprep.com/api/v3"
+BASE_URL = "https://financialmodelingprep.com/stable/search-name?query=AA&apikey=9J6azkZOe64tFaAkleudqzqy7mjcrF24"
+# BASE_URL = "https://financialmodelingprep.com/api/v3"
 
 
 def call_fmp(endpoint, params=None):
